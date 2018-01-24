@@ -28,4 +28,17 @@ public class DeckOfCards {
             }
         }
     }
+    
+    /**
+     * This method will return a String that has all the cards in the deck
+     */
+    @Override
+    public String toString()
+    {
+        String stringOfCards = "";
+        for (Card card : deck)
+            stringOfCards += card.toString() + "\n";
+        
+        return stringOfCards;
+    }
 }

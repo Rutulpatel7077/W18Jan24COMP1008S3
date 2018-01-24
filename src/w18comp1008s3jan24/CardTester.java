@@ -20,5 +20,7 @@ public class CardTester {
         System.out.printf("My card2 is: %s %n", card2);
         System.out.printf("My card1 is: %s %n", card1);
         
+        DeckOfCards deck = new DeckOfCards();
+        System.out.print(deck);
     }
 }
