@@ -57,8 +57,38 @@ public class Card {
     }
 
     public void setSuit(String suit) {
-        this.suit = suit;
+        for (String validSuit: validSuits)
+        {
+            if (validSuit.equalsIgnoreCase(suit)){
+                this.suit=validSuit;
+                return;
+            }
+        }
+        throw new IllegalArgumentException("Valid suits are hearts, clubs, "
+                + "diamonds and spades");
     }
     
+    /**
+     * This method will return the value of a card
+     */
+    public int getValue()
+    {
+        for (int i=0; i<validFaceNames.length; i++)
+        {
+            if (faceName.equals(validFaceNames[i]))
+                return i+2;
+        }
+        return 0;
+    }
+    
+    /**
+     * This method overrides the parent method of toString.  It will
+     * represent a card with the pattern of "faceName of suit"
+     */
+    @Override
+    public String toString()
+    {
+        return faceName + " of " + suit;
+    }
     
 }
